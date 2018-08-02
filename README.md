@@ -19,15 +19,19 @@ typoと判定された記述がある場合は、画面下部に該当した記�
 # デプロイ
 
 `now` CLIを使用します。
+
 事前にQiitaのread可能なトークンをnowのseacretとして登録しておきます。
+
 (トークンなしでも動作しますが、Qiita APIの利用制限が一時間に60回まで低下します)
 
 `now secret add qiita-zeit-read-token (Qiitaで生成したtoken)`
 
 `now --public -e token=@qiita-zeit-read-token && now alias && now rm qiita-typo-checker --safe --yes`
+
 (Repositoryを落とした場合)
 
 `now --public -e token=@qiita-zeit-read-token khsk/qiita-typo-checker-zeit && now alias && now rm qiita-typo-checker --safe --yes`
+
 (GitHubから)
 
 利用可能な場合は`now.json`に記述された`qiita-typo-checker.now.sh`にaliasが張られ、公開されます。
