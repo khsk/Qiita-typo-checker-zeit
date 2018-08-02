@@ -66,12 +66,11 @@ typoと判定された記述がある場合は、画面下部に該当した記�
 * [zeit/micro: Asynchronous HTTP microservices](https://github.com/zeit/micro)
 * [pedronauck/micro-router: A tiny and functional router for Zeit's Micro](https://github.com/pedronauck/micro-router)
 * [Node.js でちょっとしたサーバーサイドやるなら、 Micro が良いかも - Qiita](https://qiita.com/acro5piano/items/d421e2d41ee15e20e1de)
-* 
 
 ## pug
 
 * [pugjs/pug: Pug – robust, elegant, feature rich template engine for Node.js](https://github.com/pugjs/pug)
 
-## 
+## Materialize
 
 * [Documentation - Materialize](https://materializecss.com/)
