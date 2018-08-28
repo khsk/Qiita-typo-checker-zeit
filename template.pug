@@ -1,6 +1,6 @@
 - items = items || []
 - userId = userId || ''
-- itemId = itemId || ''
+- isPost = isPost || undefined
 doctype html
 html(lang="ja")
   head
@@ -28,16 +28,23 @@ html(lang="ja")
                 i.material-icons.right notes
     
     div.row
-        each item in items
-            div.col.s6.m6
+        if isPost && items.length > 0
+            each item in items
+                div.col.s6.m6
+                    div.card.card-panel.teal
+                        div.card-content
+                            span.card-title
+                                if userId
+                                    a.flow-text(href=item.url, style={color: '#f0c808'})= item.title
+                                else
+                                    p.flow-text(style={color: '#f0c808'})= item.title
+                            each mistake, correct in item.typos
+                                p.flow-text(style={color: '#dd1c1a'})= correct
+                                p.flow-text(style={color: '#fff1d0'})= mistake 
+        else if isPost && items.length == 0
+            div.col.s12.m12
                 div.card.card-panel.teal
-                    div.card-content
-                        span.card-title
-                            a.flow-text(href=item.url, style={color: '#f0c808'})= item.title
-                        each mistake, correct in item.typos
-                            p.flow-text(style={color: '#dd1c1a'})= correct
-                            p.flow-text(style={color: '#fff1d0'})= mistake 
-
+                    p.flow-text(style={color: '#fff1d0'}) 該当がありませんでした
 
     div.row
         h5 GitHub

@@ -106,7 +106,8 @@ const checkText = async text => {
     result[0].messages.forEach(message => {
         item.typos[message.message] = message.fix || message.ruleId;
     });
-    return [item]
+    
+    return Object.keys(item.typos).length == 0 ? [] : [item]
 }
 
 
@@ -127,8 +128,9 @@ const main = async (req, res) => {
 
     return compiledFunction({
         userId : postParam.userId,
-        text   : postParam.text,
+        text   : postParam.text ? postParam.text.substr(0, 1000) : '',
         items  : checkedItems,
+        isPost : true,
     })
 }
 
