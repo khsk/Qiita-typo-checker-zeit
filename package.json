@@ -6,7 +6,8 @@
   "bin": "bin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "micro"
+    "start": "micro",
+    "now" : "now --public -e token=@qiita-zeit-read-token && now alias && now rm qiita-typo-checker --safe --yes"
   },
   "author": "khsk",
   "license": "MIT",
